@@ -1,0 +1,25 @@
+neo4j:
+  name: neo4j-standalone
+
+  edition: "enterprise"
+  acceptLicenseAgreement: "yes"
+
+  password: "processingpipeline"
+
+  plugins:
+    - "graph-data-science"
+
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "2Gi"
+    limits:
+      cpu: "1"
+      memory: "4Gi"
+
+  config:
+    dbms.security.auth_enabled: "true"
+
+volumes:
+  data:
+    mode: defaultStorageClass
